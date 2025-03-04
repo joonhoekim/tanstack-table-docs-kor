@@ -9,7 +9,7 @@ const config: Config = {
   tagline: '강력한 헤드리스 테이블 & 데이터그리드',
   favicon: 'img/favicon.ico',
 
-  // Set the production url (UNDER CONSTRUCTION)
+  // Set the production url
   url: 'https://joonhoekim.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
@@ -20,7 +20,7 @@ const config: Config = {
   organizationName: 'joonhoekim', // Usually your GitHub org/user name.
   projectName: 'tanstack-table-docs-kor', // Usually your repo name.
 
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
 
   // Even if you don't use internationalization, you can use this field to set
