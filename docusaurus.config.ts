@@ -10,10 +10,10 @@ const config: Config = {
   favicon: 'img/favicon.ico',
 
   // Set the production url (UNDER CONSTRUCTION)
-  url: 'https://tanstack-table-kor.vercel.app',
+  url: 'https://joonhoekim.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
+  baseUrl: '/tanstack-table-docs-kor/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.

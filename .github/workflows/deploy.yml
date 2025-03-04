@@ -1,0 +1,39 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # main 브랜치에 푸시할 때마다 실행됩니다
+  pull_request:
+    branches:
+      - main  # main 브랜치로의 PR에 대해서도 실행됩니다
+  workflow_dispatch:  # 수동으로 워크플로우를 실행할 수 있습니다
+
+permissions:
+  contents: write  # 저장소에 쓰기 권한
+
+jobs:
+  deploy:
+    name: Deploy to GitHub Pages
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3  # 저장소를 체크아웃합니다
+      - uses: actions/setup-node@v3  # Node.js 환경을 설정합니다
+        with:
+          node-version: 18
+          cache: yarn
+
+      - name: 의존성 설치
+        run: yarn install --frozen-lockfile
+      
+      - name: 웹사이트 빌드
+        run: yarn build
+
+      # 빌드된 사이트를 gh-pages 브랜치에 배포합니다
+      - name: GitHub Pages에 배포
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build  # Docusaurus 빌드 디렉토리
+          user_name: github-actions[bot]
+          user_email: 41898282+github-actions[bot]@users.noreply.github.com
