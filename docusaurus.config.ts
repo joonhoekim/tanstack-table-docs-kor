@@ -6,7 +6,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
   title: 'TanStack Table 한국어 문서',
-  tagline: '강력한 헤드리스 테이블 & 데이터그리드 리액트 라이브러리',
+  tagline: '강력한 헤드리스 테이블 & 데이터그리드',
   favicon: 'img/favicon.ico',
 
   // Set the production url (UNDER CONSTRUCTION)
