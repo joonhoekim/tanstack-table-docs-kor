@@ -8,6 +8,7 @@ const config: Config = {
   title: 'TanStack Table 한국어 문서',
   tagline: '강력한 헤드리스 테이블 & 데이터그리드',
   favicon: 'img/favicon.ico',
+  trailingSlash: true,
 
   // Set the production url
   url: 'https://joonhoekim.github.io',
