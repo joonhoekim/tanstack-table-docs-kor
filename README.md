@@ -1,17 +1,16 @@
 # TanStack Table 한국어 문서
 
-이 저장소는 [TanStack Table](https://tanstack.com/table/latest) 공식 문서의 한국어 번역 프로젝트입니다. 한국어 사용자들이 TanStack Table을 더 쉽게 이해하고 활용할 수 있도록 돕는 것을 목표로 합니다.
+이 저장소는 [TanStack Table](https://tanstack.com/table/latest) 공식 문서의 한국어 번역 프로젝트입니다.
+한국어 사용자들이 TanStack Table을 더 쉽게 이해하고 활용할 수 있도록 돕는 것을 목표로 합니다.
 
 ## 프로젝트 소개
 
-TanStack Table(이전의 React Table)은 React, Vue, Solid 등 다양한 프레임워크에서 사용할 수 있는 강력한 테이블 라이브러리입니다. 이 프로젝트는 영어로 된 공식 문서를 한국어로 번역하여 제공합니다.
+TanStack Table(이전의 React Table)은 React, Vue, Solid 등 다양한 프레임워크에서 사용할 수 있는 강력한 테이블 라이브러리입니다.
+이 프로젝트는 영어로 된 공식 문서를 한국어로 번역하여 제공합니다.
 
 ### 번역 범위
 
-- 설치 및 시작하기
-- 핵심 개념
-- API 레퍼런스
-- 예제 및 튜토리얼
+[공식 문서](https://github.com/TanStack/table/tree/main/docs)가 번역의 범위입니다.
 
 ## 기여하기
 

@@ -7,38 +7,42 @@ type FeatureItem = {
   title: string;
   Svg: React.ComponentType<React.ComponentProps<'svg'>>;
   description: ReactNode;
+  id: string;
 };
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Easy to Use',
+    title: '한국어로 이해하기 쉽게',
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        TanStack Table의 공식 문서를 한국어로 번역하여 더 많은 개발자분들이 
+        쉽게 이해하고 활용할 수 있도록 노력하고 있습니다.
       </>
     ),
+    id: 'easy-korean',
   },
   {
-    title: 'Focus on What Matters',
+    title: 'LLM을 활용한 문서 번역',
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        LLM을 이용해 번역한 문서입니다. 
+        중요한 부분은 영어 원문도 함께 참고해주시기 바랍니다.
       </>
     ),
+    id: 'latest-docs',
   },
   {
-    title: 'Powered by React',
+    title: '커뮤니티 기반 프로젝트',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        이 프로젝트는 한국어 사용자 커뮤니티의 기여로 만들어집니다. 
+        함께 참여하여 더 나은 번역 문서를 만들어 나가실 수 있습니다.
       </>
     ),
+    id: 'community-based',
   },
 ];
 
@@ -61,8 +65,8 @@ export default function HomepageFeatures(): ReactNode {
     <section className={styles.features}>
       <div className="container">
         <div className="row">
-          {FeatureList.map((props, idx) => (
-            <Feature key={idx} {...props} />
+          {FeatureList.map((props) => (
+            <Feature key={props.id} {...props} />
           ))}
         </div>
       </div>

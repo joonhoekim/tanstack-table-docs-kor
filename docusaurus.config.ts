@@ -9,7 +9,7 @@ const config: Config = {
   tagline: '강력한 헤드리스 테이블 & 데이터그리드 리액트 라이브러리',
   favicon: 'img/favicon.ico',
 
-  // Set the production url of your site here
+  // Set the production url (UNDER CONSTRUCTION)
   url: 'https://tanstack-table-kor.vercel.app',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
@@ -17,8 +17,8 @@ const config: Config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'gmk0232', // Usually your GitHub org/user name.
-  projectName: 'tanstack-table-kor', // Usually your repo name.
+  organizationName: 'joonhoekim', // Usually your GitHub org/user name.
+  projectName: 'tanstack-table-docs-kor', // Usually your repo name.
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -40,7 +40,7 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/gmk0232/tanstack-table-kor/tree/main/',
+            'https://github.com/joonhoekim/tanstack-table-docs-kor/tree/main/',
           routeBasePath: '/',
         },
         blog: false,
@@ -73,7 +73,7 @@ const config: Config = {
           position: 'right',
         },
         {
-          href: 'https://github.com/gmk0232/tanstack-table-kor',
+          href: 'https://github.com/joonhoekim/tanstack-table-docs-kor',
           label: '한국어 문서 GitHub',
           position: 'right',
         },
@@ -87,7 +87,7 @@ const config: Config = {
           items: [
             {
               label: '시작하기',
-              to: '/docs/introduction',
+              to: '/intro',
             },
           ],
         },

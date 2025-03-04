@@ -24,7 +24,7 @@ function HomepageHeader() {
             TanStack Table 한국어 문서 시작하기 🚀
           </Link>
           <Link
-            className="button button--outline button--lg button--primary"
+            className="button button--lg button--primary"
             to="https://tanstack.com/table/latest"
             style={{marginLeft: '12px'}}>
             영문 공식 문서 보기 🌐
@@ -49,11 +49,11 @@ export default function Home(): ReactNode {
               <h2>TanStack Table 한국어 번역 프로젝트</h2>
               <p>
                 이 사이트는 <a href="https://tanstack.com/table/latest" target="_blank" rel="noopener noreferrer">TanStack Table</a>의 
-                공식 문서를 한국어로 번역한 커뮤니티 프로젝트입니다. 한국어 사용자들이 더 쉽게 TanStack Table을 이해하고 
+                공식 문서를 한국어로 번역한 커뮤니티 프로젝트입니다. <br /> 한국어 사용자들이 더 쉽게 TanStack Table을 이해하고 
                 활용할 수 있도록 돕는 것을 목표로 합니다.
               </p>
               <p>
-                번역에 기여하고 싶으시다면 <a href="https://github.com/your-repo/tanstack-table-kor" target="_blank" rel="noopener noreferrer">GitHub 저장소</a>를 
+                번역에 기여하고 싶으시다면 <a href="https://github.com/joonhoekim/tanstack-table-docs-kor" target="_blank" rel="noopener noreferrer">GitHub 저장소</a>를 
                 방문해주세요.
               </p>
             </div>

@@ -1,21 +1,21 @@
 ---
-title: Table State (React) Guide
+title: 테이블 상태 (React) 가이드
 ---
 
-## Examples
+## 예제
 
-Want to skip to the implementation? Check out these examples:
+구현 방법을 바로 확인하고 싶으신가요? 다음 예제를 확인해보세요:
 
-- [kitchen sink](../../examples/kitchen-sink)
-- [fully controlled](../../examples/fully-controlled)
+- [종합 예제](../../examples/kitchen-sink)
+- [완전 제어 예제](../../examples/fully-controlled)
 
-## Table State (React) Guide
+## 테이블 상태 (React) 가이드
 
-TanStack Table has a simple underlying internal state management system to store and manage the state of the table. It also lets you selectively pull out any state that you need to manage in your own state management. This guide will walk you through the different ways in which you can interact with and manage the state of the table.
+TanStack Table은 테이블의 상태를 저장하고 관리하기 위한 간단한 내부 상태 관리 시스템을 갖추고 있습니다. 또한 필요한 상태를 선택적으로 추출하여 자체 상태 관리 시스템에서 관리할 수 있게 해줍니다. 이 가이드에서는 테이블의 상태와 상호작용하고 관리하는 다양한 방법을 안내합니다.
 
-### Accessing Table State
+### 테이블 상태 접근하기
 
-You do not need to set up anything special in order for the table state to work. If you pass nothing into either `state`, `initialState`, or any of the `on[State]Change` table options, the table will manage its own state internally. You can access any part of this internal state by using the `table.getState()` table instance API.
+테이블 상태를 사용하기 위해 특별한 설정이 필요하지 않습니다. `state`, `initialState` 또는 `on[State]Change` 테이블 옵션에 아무것도 전달하지 않으면, 테이블은 자체적으로 내부 상태를 관리합니다. `table.getState()` 테이블 인스턴스 API를 사용하여 이 내부 상태의 어떤 부분이든 접근할 수 있습니다.
 
 ```jsx
 const table = useReactTable({
@@ -24,28 +24,28 @@ const table = useReactTable({
   //...
 })
 
-console.log(table.getState()) //access the entire internal state
-console.log(table.getState().rowSelection) //access just the row selection state
+console.log(table.getState()) // 전체 내부 상태에 접근
+console.log(table.getState().rowSelection) // 행 선택 상태에만 접근
 ```
 
-### Custom Initial State
+### 사용자 정의 초기 상태
 
-If all you need to do for certain states is customize their initial default values, you still do not need to manage any of the state yourself. You can simply set values in the `initialState` option of the table instance.
+특정 상태에 대해 초기 기본값만 사용자 정의하려면, 여전히 상태를 직접 관리할 필요가 없습니다. 테이블 인스턴스의 `initialState` 옵션에 값을 설정하기만 하면 됩니다.
 
 ```jsx
 const table = useReactTable({
   columns,
   data,
   initialState: {
-    columnOrder: ['age', 'firstName', 'lastName'], //customize the initial column order
+    columnOrder: ['age', 'firstName', 'lastName'], // 초기 열 순서 사용자 정의
     columnVisibility: {
-      id: false //hide the id column by default
+      id: false // 기본적으로 id 열 숨기기
     },
-    expanded: true, //expand all rows by default
+    expanded: true, // 기본적으로 모든 행 확장
     sorting: [
       {
         id: 'age',
-        desc: true //sort by age in descending order by default
+        desc: true // 기본적으로 나이를 내림차순으로 정렬
       }
     ]
   },
@@ -53,29 +53,29 @@ const table = useReactTable({
 })
 ```
 
-> **Note**: Only specify each particular state in either `initialState` or `state`, but not both. If you pass in a particular state value to both `initialState` and `state`, the initialized state in `state` will take overwrite any corresponding value in `initialState`.
+> **참고**: 각 특정 상태는 `initialState` 또는 `state` 중 하나에만 지정하고, 둘 다에 지정하지 마세요. 특정 상태 값을 `initialState`와 `state` 모두에 전달하면, `state`의 초기화된 상태가 `initialState`의 해당 값을 덮어씁니다.
 
-### Controlled State
+### 제어된 상태
 
-If you need easy access to the table state in other areas of your application, TanStack Table makes it easy to control and manage any or all of the table state in your own state management system. You can do this by passing in your own state and state management functions to the `state` and `on[State]Change` table options.
+애플리케이션의 다른 영역에서 테이블 상태에 쉽게 접근해야 하는 경우, TanStack Table은 자체 상태 관리 시스템에서 테이블 상태의 일부 또는 전체를 제어하고 관리하기 쉽게 해줍니다. 이는 자체 상태와 상태 관리 함수를 `state` 및 `on[State]Change` 테이블 옵션에 전달하여 수행할 수 있습니다.
 
-#### Individual Controlled State
+#### 개별 제어 상태
 
-You can control just the state that you need easy access to. You do NOT have to control all of the table state if you do not need to. It is recommended to only control the state that you need on a case-by-case basis.
+쉽게 접근해야 하는 상태만 제어할 수 있습니다. 필요하지 않다면 모든 테이블 상태를 제어할 필요는 없습니다. 필요한 상태만 사례별로 제어하는 것이 권장됩니다.
 
-In order to control a particular state, you need to both pass in the corresponding `state` value and the `on[State]Change` function to the table instance.
+특정 상태를 제어하려면, 해당 `state` 값과 `on[State]Change` 함수를 모두 테이블 인스턴스에 전달해야 합니다.
 
-Let's take filtering, sorting, and pagination as an example in a "manual" server-side data fetching scenario. You can store the filtering, sorting, and pagination state in your own state management, but leave out any other state like column order, column visibility, etc. if your API does not care about those values.
+"수동" 서버 측 데이터 가져오기 시나리오에서 필터링, 정렬, 페이지네이션을 예로 들어보겠습니다. API가 열 순서, 열 가시성 등과 같은 다른 상태에 관심이 없다면, 필터링, 정렬, 페이지네이션 상태는 자체 상태 관리에 저장하고 다른 상태는 제외할 수 있습니다.
 
 ```jsx
-const [columnFilters, setColumnFilters] = React.useState([]) //no default filters
+const [columnFilters, setColumnFilters] = React.useState([]) // 기본 필터 없음
 const [sorting, setSorting] = React.useState([{
   id: 'age',
-  desc: true, //sort by age in descending order by default
+  desc: true, // 기본적으로 나이를 내림차순으로 정렬
 }]) 
 const [pagination, setPagination] = React.useState({ pageIndex: 0, pageSize: 15 })
 
-//Use our controlled state values to fetch data
+// 제어된 상태 값을 사용하여 데이터 가져오기
 const tableQuery = useQuery({
   queryKey: ['users', columnFilters, sorting, pagination],
   queryFn: () => fetchUsers(columnFilters, sorting, pagination),
@@ -87,55 +87,55 @@ const table = useReactTable({
   data: tableQuery.data,
   //...
   state: {
-    columnFilters, //pass controlled state back to the table (overrides internal state)
+    columnFilters, // 제어된 상태를 테이블에 다시 전달 (내부 상태 덮어쓰기)
     sorting,
     pagination
   },
-  onColumnFiltersChange: setColumnFilters, //hoist columnFilters state into our own state management
+  onColumnFiltersChange: setColumnFilters, // columnFilters 상태를 자체 상태 관리로 끌어올리기
   onSortingChange: setSorting,
   onPaginationChange: setPagination,
 })
 //...
 ```
 
-#### Fully Controlled State
+#### 완전 제어 상태
 
-Alternatively, you can control the entire table state with the `onStateChange` table option. It will hoist out the entire table state into your own state management system. Be careful with this approach, as you might find that raising some frequently changing state values up a react tree, like `columnSizingInfo` state`, might cause bad performance issues.
+또는 `onStateChange` 테이블 옵션을 사용하여 전체 테이블 상태를 제어할 수 있습니다. 이는 전체 테이블 상태를 자체 상태 관리 시스템으로 끌어올립니다. 이 접근 방식을 사용할 때는 주의해야 합니다. `columnSizingInfo` 상태와 같이 자주 변경되는 상태 값을 React 트리 위로 올리면 성능 문제가 발생할 수 있습니다.
 
-A couple of more tricks may be needed to make this work. If you use the `onStateChange` table option, the initial values of the `state` must be populated with all of the relevant state values for all of the features that you want to use. You can either manually type out all of the initial state values, or use the `table.setOptions` API in a special way as shown below.
+이를 작동시키기 위해 몇 가지 추가 기법이 필요할 수 있습니다. `onStateChange` 테이블 옵션을 사용하는 경우, `state`의 초기 값은 사용하려는 모든 기능에 대한 모든 관련 상태 값으로 채워져야 합니다. 모든 초기 상태 값을 수동으로 입력하거나, 아래와 같이 특별한 방식으로 `table.setOptions` API를 사용할 수 있습니다.
 
 ```jsx
-//create a table instance with default state values
+// 기본 상태 값으로 테이블 인스턴스 생성
 const table = useReactTable({
   columns,
   data,
-  //... Note: `state` values are NOT passed in yet
+  //... 참고: `state` 값은 아직 전달되지 않음
 })
 
 
 const [state, setState] = React.useState({
-  ...table.initialState, //populate the initial state with all of the default state values from the table instance
+  ...table.initialState, // 테이블 인스턴스의 모든 기본 상태 값으로 초기 상태 채우기
   pagination: {
     pageIndex: 0,
-    pageSize: 15 //optionally customize the initial pagination state.
+    pageSize: 15 // 선택적으로 초기 페이지네이션 상태 사용자 정의
   }
 })
 
-//Use the table.setOptions API to merge our fully controlled state onto the table instance
+// table.setOptions API를 사용하여 완전 제어 상태를 테이블 인스턴스에 병합
 table.setOptions(prev => ({
-  ...prev, //preserve any other options that we have set up above
-  state, //our fully controlled state overrides the internal state
-  onStateChange: setState //any state changes will be pushed up to our own state management
+  ...prev, // 위에서 설정한 다른 옵션 유지
+  state, // 완전 제어 상태가 내부 상태를 덮어씀
+  onStateChange: setState // 모든 상태 변경은 자체 상태 관리로 전달됨
 }))
 ```
 
-### On State Change Callbacks
+### 상태 변경 콜백
 
-So far, we have seen the `on[State]Change` and `onStateChange` table options work to "hoist" the table state changes into our own state management. However, there are a few things about using these options that you should be aware of.
+지금까지 `on[State]Change`와 `onStateChange` 테이블 옵션이 테이블 상태 변경을 자체 상태 관리로 "끌어올리는" 방식을 살펴보았습니다. 그러나 이러한 옵션을 사용할 때 알아야 할 몇 가지 사항이 있습니다.
 
-#### 1. **State Change Callbacks MUST have their corresponding state value in the `state` option**.
+#### 1. **상태 변경 콜백은 반드시 `state` 옵션에 해당 상태 값이 있어야 합니다**.
 
-Specifying an `on[State]Change` callback tells the table instance that this will be a controlled state. If you do not specify the corresponding `state` value, that state will be "frozen" with its initial value.
+`on[State]Change` 콜백을 지정하면 테이블 인스턴스에 이것이 제어된 상태가 될 것임을 알립니다. 해당 `state` 값을 지정하지 않으면, 그 상태는 초기 값으로 "고정"됩니다.
 
 ```jsx
 const [sorting, setSorting] = React.useState([])
@@ -145,17 +145,17 @@ const table = useReactTable({
   data,
   //...
   state: {
-    sorting, //required because we are using `onSortingChange`
+    sorting, // `onSortingChange`를 사용하기 때문에 필요함
   },
-  onSortingChange: setSorting, //makes the `state.sorting` controlled
+  onSortingChange: setSorting, // `state.sorting`을 제어 상태로 만듦
 })
 ```
 
-#### 2. **Updaters can either be raw values or callback functions**.
+#### 2. **업데이터는 원시 값이나 콜백 함수일 수 있습니다**.
 
-The `on[State]Change` and `onStateChange` callbacks work exactly like the `setState` functions in React. The updater values can either be a new state value or a callback function that takes the previous state value and returns the new state value.
+`on[State]Change`와 `onStateChange` 콜백은 React의 `setState` 함수와 정확히 같은 방식으로 작동합니다. 업데이터 값은 새 상태 값이거나 이전 상태 값을 받아 새 상태 값을 반환하는 콜백 함수일 수 있습니다.
 
-What implications does this have? It means that if you want to add in some extra logic in any of the `on[State]Change` callbacks, you can do so, but you need to check whether or not the new incoming updater value is a function or value.
+이것이 어떤 의미를 가질까요? `on[State]Change` 콜백에 추가 로직을 넣고 싶다면 가능하지만, 새로 들어오는 업데이터 값이 함수인지 값인지 확인해야 한다는 의미입니다.
 
 ```jsx
 const [sorting, setSorting] = React.useState([])
@@ -169,35 +169,35 @@ const table = useReactTable({
     pagination,
     sorting,
   }
-  //syntax 1
+  // 문법 1
   onPaginationChange: (updater) => {
     setPagination(old => {
       const newPaginationValue = updater instanceof Function ? updater(old) : updater
-      //do something with the new pagination value
+      // 새 페이지네이션 값으로 무언가 수행
       //...
       return newPaginationValue
     })
   },
-  //syntax 2
+  // 문법 2
   onSortingChange: (updater) => {
     const newSortingValue = updater instanceof Function ? updater(sorting) : updater
-    //do something with the new sorting value
+    // 새 정렬 값으로 무언가 수행
     //...
-    setSorting(updater) //normal state update
+    setSorting(updater) // 일반 상태 업데이트
   }
 })
 ```
 
-### State Types
+### 상태 타입
 
-All complex states in TanStack Table have their own TypeScript types that you can import and use. This can be handy for ensuring that you are using the correct data structures and properties for the state values that you are controlling.
+TanStack Table의 모든 복잡한 상태는 가져와서 사용할 수 있는 자체 TypeScript 타입을 가지고 있습니다. 이는 제어하는 상태 값에 대해 올바른 데이터 구조와 속성을 사용하고 있는지 확인하는 데 유용할 수 있습니다.
 
 ```tsx
 import { useReactTable, type SortingState } from '@tanstack/react-table'
 //...
 const [sorting, setSorting] = React.useState<SortingState[]>([
   {
-    id: 'age', //you should get autocomplete for the `id` and `desc` properties
+    id: 'age', // `id`와 `desc` 속성에 대한 자동 완성을 얻을 수 있습니다
     desc: true,
   }
 ])
