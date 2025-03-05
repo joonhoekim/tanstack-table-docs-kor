@@ -11,6 +11,7 @@ TanStack Table(이전의 React Table)은 React, Vue, Solid 등 다양한 프레�
 ### 번역 범위
 
 [공식 문서](https://github.com/TanStack/table/tree/main/docs)가 번역의 범위입니다.
+단, StackBlitz로 제공되는 예시들은 제공되지 않습니다.
 
 ## 기여하기
 
@@ -25,6 +26,10 @@ TanStack Table(이전의 React Table)은 React, Vue, Solid 등 다양한 프레�
 ## 웹사이트 개발 정보
 
 이 웹사이트는 정적 웹 사이트 생성기인 [Docusaurus](https://docusaurus.io/)를 사용하여 구축되었습니다.
+
+### Sidebar 자동 생성
+
+이 프로젝트는 `docs/config.json` 파일을 기반으로, 원 문서와 유사한 사이드바를 자동 생성합니다. `generateSidebar.js` 스크립트가 이 작업을 수행하며, `config.json`의 섹션 구조를 읽어 `sidebars.ts` 파일을 생성합니다. 이 스크립트는 `package.json`의 `prebuild` 및 `prestart` 스크립트에 포함되어 있어, 빌드 또는 로컬 개발 서버 시작 전에 자동으로 실행됩니다.
 
 ### 설치
 
