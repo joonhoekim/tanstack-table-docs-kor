@@ -5,8 +5,8 @@ import type * as Preset from '@docusaurus/preset-classic';
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: 'TanStack Table 한국어 문서',
-  tagline: '강력한 헤드리스 테이블 & 데이터그리드',
+  title: 'TanStack Table KOR',
+  tagline: 'TanStack Table 공식 문서의 한국어 번역 프로젝트',
   favicon: 'img/favicon.ico',
   trailingSlash: true,
 
@@ -52,31 +52,67 @@ const config: Config = {
     ],
   ],
 
+  // 로컬 검색 플러그인 추가
+  themes: [
+    [
+      require.resolve("@easyops-cn/docusaurus-search-local"),
+      /** @type {import("@easyops-cn/docusaurus-search-local").PluginOptions} */
+      ({
+        // 한국어 검색 지원을 위한 설정
+        hashed: true,
+        language: ["en", "ko"],
+        highlightSearchTermsOnTargetPage: true,
+        explicitSearchResultPath: true,
+        docsRouteBasePath: "/",
+      }),
+    ],
+  ],
+
   themeConfig: {
     // Replace with your project's social card
-    image: 'img/tanstack-table-social-card.jpg',
+    image: 'img/favicon.ico',
     navbar: {
-      title: 'TanStack Table 한국어 문서',
+      title: '',
       logo: {
         alt: 'TanStack Table Logo',
         src: 'img/logo.svg',
       },
       items: [
+
         {
-          type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
+          to: '/introduction',
+          label: '시작하기',
           position: 'left',
-          label: '문서',
         },
         {
-          href: 'https://github.com/TanStack/table',
-          label: 'TanStack Table GitHub',
-          position: 'right',
+          to: '/guide/data',
+          label: '핵심 가이드',
+          position: 'left',
+        },
+        {
+          to: '/guide/column-ordering',
+          label: '기능 가이드',
+          position: 'left',
+        },
+        {
+          to: '/api/core/column-def',
+          label: '핵심 API',
+          position: 'left',
+        },
+        {
+          to: '/api/features/column-filtering',
+          label: '기능 API',
+          position: 'left',
         },
         {
           href: 'https://github.com/joonhoekim/tanstack-table-docs-kor',
-          label: '한국어 문서 GitHub',
-          position: 'right',
+          label: '번역 GitHub',
+          position: 'left',
+        },
+        {
+          href: 'https://tanstack.com/table/latest',
+          label: '영어 문서',
+          position: 'left',
         },
       ],
     },
@@ -87,7 +123,7 @@ const config: Config = {
           title: '문서',
           items: [
             {
-              label: '시작하기',
+              label: '번역 프로젝트 소개',
               to: '/intro',
             },
           ],
@@ -96,12 +132,8 @@ const config: Config = {
           title: '커뮤니티',
           items: [
             {
-              label: 'Discord',
+              label: 'Tanstack Discord',
               href: 'https://discord.com/invite/WrRKjPJ',
-            },
-            {
-              label: 'Twitter',
-              href: 'https://twitter.com/tanstack',
             },
           ],
         },
@@ -119,7 +151,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} TanStack Table 한국어 문서. Built with Docusaurus.`,
+      // copyright: 'TanStack Table KOR 번역 프로젝트',
     },
     prism: {
       theme: prismThemes.github,

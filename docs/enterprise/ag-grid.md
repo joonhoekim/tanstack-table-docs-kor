@@ -1,5 +1,5 @@
 ---
-title: AG Grid - An alternative enterprise data-grid solution
+title: AG Grid - 대안적인 엔터프라이즈 데이터 그리드 솔루션
 ---
 
 <p>
@@ -8,36 +8,36 @@ title: AG Grid - An alternative enterprise data-grid solution
   </a>
 </p>
 
-While we clearly love TanStack Table, we acknowledge that it is not a "batteries" included product packed with customer support and enterprise polish. We realize that some of our users may need this though! To help out here, we want to introduce you to AG Grid, an enterprise-grade data grid solution that can supercharge your applications with its extensive feature set and robust performance. While TanStack Table is also a powerful option for implementing data grids, we believe in providing our users with a diverse range of choices that best fit their specific requirements. AG Grid is one such choice, and we're excited to highlight its capabilities for you.
+우리는 분명히 TanStack Table을 사랑하지만, 이것이 고객 지원과 엔터프라이즈 수준의 완성도를 갖춘 "모든 것이 포함된" 제품이 아니라는 점을 인정합니다. 하지만 일부 사용자들에게는 이러한 요소가 필요하다는 것을 알고 있습니다! 이를 돕기 위해, 광범위한 기능 세트와 강력한 성능으로 애플리케이션을 향상시킬 수 있는 엔터프라이즈급 데이터 그리드 솔루션인 AG Grid를 소개해 드리고자 합니다. TanStack Table 역시 데이터 그리드 구현을 위한 강력한 옵션이지만, 우리는 사용자들에게 그들의 특정 요구사항에 가장 적합한 다양한 선택지를 제공하는 것을 믿습니다. AG Grid는 그러한 선택지 중 하나이며, 여러분을 위해 그 기능을 소개하게 되어 기쁩니다.
 
-## Why Choose [AG Grid](https://ag-grid.com/react-data-grid/?utm_source=reacttable&utm_campaign=githubreacttable)?
+## 왜 [AG Grid](https://ag-grid.com/react-data-grid/?utm_source=reacttable&utm_campaign=githubreacttable)를 선택해야 할까요?
 
-Here are some good reasons to consider AG Grid for your next project:
+다음은 여러분의 다음 프로젝트에서 AG Grid를 고려해야 할 좋은 이유들입니다:
 
-### Comprehensive Feature Set
+### 포괄적인 기능 세트
 
-AG Grid offers an extensive set of features, making it a versatile and powerful data grid solution. With AG Grid, you get access to a wide range of functionalities that cater to the needs of complex enterprise applications. From advanced sorting, filtering, and grouping capabilities to column pinning, multi-level headers, and tree data structure support, AG Grid provides you with the tools to create dynamic and interactive data grids that meet your application's unique demands.
+AG Grid는 광범위한 기능 세트를 제공하여 다재다능하고 강력한 데이터 그리드 솔루션입니다. AG Grid를 통해 복잡한 엔터프라이즈 애플리케이션의 요구를 충족시키는 다양한 기능에 접근할 수 있습니다. 고급 정렬, 필터링, 그룹화 기능부터 열 고정, 다단계 헤더, 트리 데이터 구조 지원까지, AG Grid는 애플리케이션의 고유한 요구 사항을 충족하는 동적이고 상호작용적인 데이터 그리드를 만들기 위한 도구를 제공합니다.
 
-### High Performance
+### 높은 성능
 
-When it comes to handling large datasets and achieving exceptional performance, AG Grid delivers outstanding results. It employs highly optimized rendering techniques, efficient data updates, and virtualization to ensure smooth scrolling and fast response times, even when dealing with thousands or millions of rows of data. AG Grid's performance optimizations make it an excellent choice for applications that require high-speed data manipulation and visualization.
+대규모 데이터셋을 처리하고 탁월한 성능을 달성하는 데 있어서, AG Grid는 뛰어난 결과를 제공합니다. 고도로 최적화된 렌더링 기술, 효율적인 데이터 업데이트, 가상화를 활용하여 수천 또는 수백만 행의 데이터를 다룰 때도 부드러운 스크롤과 빠른 응답 시간을 보장합니다. AG Grid의 성능 최적화는 고속 데이터 조작과 시각화가 필요한 애플리케이션에 탁월한 선택입니다.
 
-### Customization and Extensibility
+### 맞춤화 및 확장성
 
-AG Grid is designed to be highly customizable and extensible, allowing you to tailor the grid to your specific needs. It provides a rich set of APIs and events that enable you to integrate custom functionality seamlessly. You can define custom cell renderers, editors, filters, and aggregators to enhance the grid's behavior and appearance. AG Grid also supports a variety of themes, allowing you to match the grid's visual style to your application's design.
+AG Grid는 특정 요구에 맞게 그리드를 조정할 수 있도록 높은 수준의 맞춤화와 확장성을 제공하도록 설계되었습니다. 사용자 정의 기능을 원활하게 통합할 수 있는 풍부한 API와 이벤트를 제공합니다. 그리드의 동작과 외관을 향상시키기 위해 사용자 정의 셀 렌더러, 에디터, 필터, 집계기를 정의할 수 있습니다. AG Grid는 또한 다양한 테마를 지원하여 그리드의 시각적 스타일을 애플리케이션의 디자인에 맞출 수 있습니다.
 
-### Support for Enterprise Needs
+### 엔터프라이즈 요구 지원
 
-As an enterprise-focused solution, AG Grid caters to the requirements of complex business applications. It offers enterprise-specific features such as row grouping, column pinning, server-side row model, master/detail grids, and rich editing capabilities. AG Grid also integrates well with other enterprise frameworks and libraries, making it a reliable choice for large-scale projects.
+엔터프라이즈 중심 솔루션으로서, AG Grid는 복잡한 비즈니스 애플리케이션의 요구 사항을 충족시킵니다. 행 그룹화, 열 고정, 서버 사이드 행 모델, 마스터/디테일 그리드, 풍부한 편집 기능과 같은 엔터프라이즈 특화 기능을 제공합니다. AG Grid는 또한 다른 엔터프라이즈 프레임워크 및 라이브러리와 잘 통합되어 대규모 프로젝트에 신뢰할 수 있는 선택입니다.
 
-### Active Development and Community Support
+### 활발한 개발 및 커뮤니티 지원
 
-AG Grid benefits from active development and a thriving community of developers. The team behind AG Grid consistently introduces new features and enhancements, ensuring that the product evolves to meet the changing needs of the industry. The community support is robust, with forums, documentation, and examples readily available to assist you in utilizing the full potential of AG Grid.
+AG Grid는 활발한 개발과 번창하는 개발자 커뮤니티의 혜택을 받습니다. AG Grid 팀은 지속적으로 새로운 기능과 개선 사항을 도입하여 제품이 산업의 변화하는 요구를 충족하도록 발전시킵니다. 커뮤니티 지원은 포럼, 문서, 예제가 쉽게 제공되어 AG Grid의 잠재력을 최대한 활용하는 데 도움을 줍니다.
 
-## Conclusion
+## 결론
 
-While TanStack Table remains a powerful and flexible option for implementing data grids, we understand that different projects have different requirements. AG Grid offers a compelling enterprise-grade solution that may be particularly suited to your needs. Its comprehensive feature set, high performance, customization options, and focus on enterprise requirements make AG Grid an excellent choice for projects that demand a robust and scalable data grid solution.
+TanStack Table은 데이터 그리드 구현을 위한 강력하고 유연한 옵션으로 남아 있지만, 우리는 다양한 프로젝트에 다양한 요구 사항이 있다는 것을 이해합니다. AG Grid는 특히 여러분의 요구에 적합할 수 있는 매력적인 엔터프라이즈급 솔루션을 제공합니다. 포괄적인 기능 세트, 높은 성능, 맞춤화 옵션, 엔터프라이즈 요구 사항에 대한 초점은 AG Grid를 강력하고 확장 가능한 데이터 그리드 솔루션이 필요한 프로젝트에 탁월한 선택으로 만듭니다.
 
-We encourage you to explore AG Grid further by visiting their website and trying out their demo. Remember that both TanStack Table and AG Grid have their unique strengths and considerations. We believe in providing options to our users, empowering you to make informed decisions and choose the best fit for your specific use case.
+우리는 여러분이 AG Grid 웹사이트를 방문하고 데모를 시도해 보기를 권장합니다. TanStack Table과 AG Grid 모두 고유한 강점과 고려 사항이 있다는 것을 기억하세요. 우리는 사용자에게 옵션을 제공하여 정보에 기반한 결정을 내리고 특정 사용 사례에 가장 적합한 선택을 할 수 있도록 지원하는 것을 믿습니다.
 
-Visit the [AG Grid website](https://www.ag-grid.com).
+[AG Grid 웹사이트](https://www.ag-grid.com)를 방문해보세요.

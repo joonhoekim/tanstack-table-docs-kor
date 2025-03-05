@@ -16,12 +16,8 @@ TanStack Table(이전의 React Table)은 React, Vue, Solid 등 다양한 프레�
 
 ## 번역 범위
 
-이 프로젝트는 TanStack Table v8의 주요 문서를 한국어로 번역하고 있습니다. 번역 범위는 다음과 같습니다:
-
-- 설치 및 시작하기
-- 핵심 개념
-- API 레퍼런스
-- 예제 및 튜토리얼
+이 프로젝트는 TanStack Table v8의 주요 문서를 한국어로 번역하고 있습니다.
+현재 원본 문서에서 stackblitz로 제공하는 예제는 번역 대상에 포함되지 않습니다.
 
 ## 기여하기
 
@@ -33,4 +29,4 @@ TanStack Table(이전의 React Table)은 React, Vue, Solid 등 다양한 프레�
 
 ## 라이선스
 
-이 번역 프로젝트는 원본 TanStack Table과 동일한 라이선스를 따릅니다.
+이 번역 프로젝트는 원본 TanStack Table 문서와 동일한 라이선스를 따릅니다.
