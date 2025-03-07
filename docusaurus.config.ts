@@ -72,7 +72,7 @@ const config: Config = {
     // Replace with your project's social card
     image: 'img/favicon.ico',
     navbar: {
-      title: '',
+      title: 'Tanstack Table 한국어 문서',
       logo: {
         alt: 'TanStack Table Logo',
         src: 'img/logo.svg',
