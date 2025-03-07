@@ -53,6 +53,7 @@ yarn build
 명령어의 사용법에 대한 자세한 내용은 [docusaurus 가이드](https://docusaurus.io/docs/deployment)를 참조하세요.
 
 4. 배포
+
 배포는 github actions를 통해 자동으로 git pages로 배포되고 있습니다.
 현재 배포 설정을 확인하시려면 [이 코드](https://github.com/joonhoekim/tanstack-table-docs-kor/blob/main/.github/workflows/deploy.yml)를 참조하세요.
 
